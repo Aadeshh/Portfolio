@@ -1,6 +1,7 @@
 import project1 from "../assets/projects/breal.png";
 import project2 from "../assets/projects/3D.png";
 import project3 from "../assets/projects/url.png";
+import project4 from "../assets/projects/Enigma.png"
 
 export const MAIN_CONTENT = `Passionate and industrious software engineering graduate from the University of California, Davis, with hands-on experience in cybersecurity, software development, and autonomous vehicle technology. Adept at creating innovative solutions and eager to contribute to impactful projects. Skilled in various programming languages and frameworks, with a strong foundation in data structures, algorithms, and machine learning. Motivated to collaborate with senior engineers and continuously learn in a dynamic and growth-oriented environment.`;
 
@@ -55,6 +56,13 @@ export const PROJECTS = [
     description:
       "A personal portfolio website showcasing projects, skills, and contact information.(what you're looking at right now :) )",
     technologies: ["HTML", "Tailwind CSS", "React", "Bootstrap"],
+  },
+  {
+    title: "Enigma Machine",
+    image: project4,
+    description:
+      "Implemented an Enigma machine in C, a historical cipher device used for securing communications. Developed key components including the plugboard, reflector, and rotors. Utilized predefined and custom rotors, and employed an online Enigma simulator for debugging and testing. This project demonstrates proficiency in replicating complex encryption mechanisms.",
+    technologies: ["C"],
   },
 ];
 
