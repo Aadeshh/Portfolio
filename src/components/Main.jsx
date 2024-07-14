@@ -20,7 +20,7 @@ const Main = () => {
             </div>
             <div className='w-full lg:w-1/2 lg:p-8'>
                 <div className='flex justify-center'>
-                    <img src={profilePic}></img>
+                    <img src={profilePic}className='lg:-mt-16'></img>
                 </div>
             </div>
         </div>
