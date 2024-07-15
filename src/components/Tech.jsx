@@ -41,7 +41,7 @@ const Tech = () => {
         {showMore && (
             <div className='mt-4'>
                 <p className="text-center text-lg max-w-2xl mx-auto">
-                   C, Ruby, JavaScript, Git, MATLAB, R, C#, HTML, CSS, Tensorflow, Pandas, Jira, Scikit-learn, Docker
+                   C, JavaScript, Git, MATLAB, R, C#, HTML, CSS, Ruby, Tensorflow, Pandas, Jira, Scikit-learn, Docker
                 </p>
             </div>
         )}
