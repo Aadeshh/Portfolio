@@ -2,7 +2,7 @@ import project1 from "../assets/projects/breal.png";
 import project2 from "../assets/projects/3D.png";
 import project3 from "../assets/projects/url.png";
 import project4 from "../assets/projects/enigma.jpeg"
-
+import project5 from "../assets/projects/bot.jpg"
 export const MAIN_CONTENT = `Passionate and industrious software engineering graduate from the University of California, Davis, with hands-on experience in cybersecurity, software development, and autonomous vehicle technology. Adept at creating innovative solutions and eager to contribute to impactful projects. Skilled in various programming languages and frameworks, with a strong foundation in data structures, algorithms, and machine learning. Motivated to collaborate with senior engineers and continuously learn in a dynamic and growth-oriented environment.`;
 
 export const ABOUT_TEXT = `Hello! I’m Aadesh Thoppae, a recent graduate from UC Davis with a degree in Software Engineering. My journey in tech has been fueled by a deep curiosity and a drive to solve complex problems. From working on high-level security projects in a cybersecurity lab to developing a 3D T-Shirt Customization App, I’ve gained diverse experience that has honed my skills and broadened my perspective.
@@ -12,6 +12,13 @@ In my free time, I enjoy exploring new technologies and working on personal proj
 Feel free to connect with me on LinkedIn or reach out via email. Let’s create something amazing together!`;
 
 export const EXPERIENCES = [
+  {
+    year: "August 2024 - Present",
+    role: "Software Developer",
+    company: "Soundromeda",
+    description: `Spearheaded development of Odyssey, a gaming platform integrating Web3 payment systems and music streaming services, projecting 200% increase in user engagement. Optimized cross-platform architecture ensuring 99.9% uptime and sub-second response times while handling concurrent media streaming. Orchestrated seamless integration of multiple third-party APIs, implementing secure payment processing and authentication workflows while maintaining robust data management protocols`,
+    technologies: [,"Typescript, Next.js, Docker, Firebase"],
+  },
   {
     year: "August 2023 - June 2024",
     role: "Cybersecurity Lab Assistant",
@@ -36,6 +43,13 @@ export const EXPERIENCES = [
 ];
 
 export const PROJECTS = [
+  {
+    title: "Doc - Medical Chatbot)",
+    image: project5,
+    description:
+      "Designed and developed a sophisticated medical chatbot using Large Language Models (LLM), LangChain, and Pinecone. Implemented a robust Retrieval-Augmented Generation (RAG) pipeline to ensure accurate healthcare information retrieval and enhance conversational AI. Built an intelligent virtual assistant with advanced vector search capabilities, leveraging OpenAI's language model to process complex medical queries and generate precise, contextually relevant responses.",
+    technologies: ["LLM Models(OpenAI)", "Langchain", "Pinecone", "Python", "NLP","Python" ],
+  },
   {
     title: "BeFake(BeReal Clone)",
     image: project1,
