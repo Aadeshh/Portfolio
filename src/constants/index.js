@@ -1,86 +1,221 @@
 import project1 from "../assets/projects/breal.png";
 import project2 from "../assets/projects/3D.png";
 import project3 from "../assets/projects/url.png";
-import project4 from "../assets/projects/enigma.jpeg"
-import project5 from "../assets/projects/bot.jpg"
-export const MAIN_CONTENT = `Passionate and industrious software engineering graduate from the University of California, Davis, with hands-on experience in cybersecurity, software development, and autonomous vehicle technology. Adept at creating innovative solutions and eager to contribute to impactful projects. Skilled in various programming languages and frameworks, with a strong foundation in data structures, algorithms, and machine learning. Motivated to collaborate with senior engineers and continuously learn in a dynamic and growth-oriented environment.`;
+import project4 from "../assets/projects/enigma.jpeg";
+import project5 from "../assets/projects/DOC.png";
 
-export const ABOUT_TEXT = `Hello! I’m Aadesh Thoppae, a recent graduate from UC Davis with a degree in Software Engineering. My journey in tech has been fueled by a deep curiosity and a drive to solve complex problems. From working on high-level security projects in a cybersecurity lab to developing a 3D T-Shirt Customization App, I’ve gained diverse experience that has honed my skills and broadened my perspective.
+import logoSoundromeda from "../assets/Soundromeda.webp";
+import logoUCD from "../assets/UCD.jpg";
+import logoUCDEv from "../assets/UCDEV2.jpg";
+import logoIOURING from "../assets/IOURING.jpeg";
 
-In my free time, I enjoy exploring new technologies and working on personal projects that challenge my creativity and technical abilities. I’m particularly passionate about leveraging AI and machine learning to create innovative solutions. I’m excited to bring my enthusiasm and expertise to a forward-thinking team where I can continue to grow and make a meaningful impact.
+export const MAIN_CONTENT = `Software Developer & AI Enthusiast currently pursuing Master's in Computer Science with AI Concentration at University of San Francisco. Experienced in developing scalable applications, cybersecurity solutions, and autonomous vehicle technologies. AWS Solutions Architect Associate certified with expertise in full-stack development, machine learning, and secure system design. Passionate about leveraging cutting-edge technologies to create innovative solutions that drive meaningful impact.`;
 
-Feel free to connect with me on LinkedIn or reach out via email. Let’s create something amazing together!`;
+export const ABOUT_TEXT = `Hello! I'm Aadesh Thoppae, a Computer Science graduate from UC Davis currently pursuing my Master's in Computer Science with AI Concentration at University of San Francisco (2025-2027). My journey in tech spans cybersecurity research, autonomous vehicle development, and cutting-edge AI applications.
+
+As an AWS Solutions Architect Associate certified professional, I've spearheaded development of gaming platforms with Web3 integration, contributed to secure voting systems using advanced security kernels, and enhanced autonomous vehicle sensor fusion algorithms. My recent work includes developing sophisticated medical chatbots using Large Language Models and RAG pipelines.
+
+I'm passionate about leveraging AI and machine learning to solve complex real-world problems. From achieving 200% user engagement increases to maintaining 99.9% system uptime, I focus on creating scalable, impactful solutions. Currently exploring the intersection of AI, healthcare, and autonomous systems while building my expertise in advanced machine learning techniques.
+
+Let's connect and create something innovative together!`;
 
 export const EXPERIENCES = [
   {
-    year: "August 2024 - Present",
+    year: "Aug 2024 - Aug 2025",
     role: "Software Developer",
     company: "Soundromeda",
-    description: `Spearheaded development of Odyssey, a gaming platform integrating Web3 payment systems and music streaming services, projecting 200% increase in user engagement. Optimized cross-platform architecture ensuring 99.9% uptime and sub-second response times while handling concurrent media streaming. Orchestrated seamless integration of multiple third-party APIs, implementing secure payment processing and authentication workflows while maintaining robust data management protocols`,
-    technologies: [,"Typescript, Next.js, Docker, Firebase"],
+    logo: logoSoundromeda, // Placeholder for company logo
+    description: `Spearheaded development of Odyssey, a gaming platform integrating Web3 payment systems and music streaming services, projecting 200% increase in user engagement. Optimized cross-platform architecture ensuring 99.9% uptime and sub-second response times while handling concurrent media streaming. Orchestrated secure payment processing and authentication workflows through multiple third-party APIs, while maintaining robust data management protocols.`,
+    achievements: [
+      "Projected 200% increase in user engagement through innovative platform design",
+      "Achieved 99.9% system uptime with sub-second response times",
+      "Integrated multiple Web3 payment systems and third-party APIs",
+      "Optimized cross-platform architecture for concurrent media streaming"
+    ],
+    technologies: ["TypeScript", "Next.js", "Docker", "Firebase", "Web3"],
+    featured: true,
   },
   {
-    year: "August 2023 - June 2024",
+    year: "Aug 2023 - Jun 2024",
     role: "Cybersecurity Lab Assistant",
     company: "UC Davis",
-    description: `Collaborated with professors on the high-level security kernel GEMSOS, spearheading a multi-year initiative to develop a secure and reliable voting system. Completed various smaller projects to deepen understanding of advanced security concepts.`,
-    technologies: ["GEMSOS","C++"],
+    logo: logoUCD, // Placeholder for company logo
+    description: `Collaborated with professors on the GEMSOS security kernel, enhancing security features and gaining valuable insights into advanced security protocols. Established a multi-year project to implement a secure voting system, improving system reliability and security protocols.`,
+    achievements: [
+      "Enhanced GEMSOS security kernel with advanced security protocols",
+      "Established multi-year secure voting system project",
+      "Improved system reliability and security protocol implementation",
+      "Collaborated on cutting-edge cybersecurity research initiatives"
+    ],
+    technologies: ["GEMSOS", "C++", "Security Protocols", "Cryptography"],
   },
   {
-    year: "August 2023 - October 2023",
+    year: "Aug 2023 - Oct 2023",
     role: "Software Engineering Intern",
     company: "IOURING",
-    description: `Developed and deployed a Client-Server Application in Go for optimal data storage. Managed numerous client connections using Client Pooling and MySQL for data storage. Designed a RESTful API to efficiently handle tasks in a ToDo list format.`,
-    technologies: ["Go", "mySQL"],
+    logo: logoIOURING, 
+    description: `Designed and developed high-performance Client-Server Application in Go, leveraging client pooling and MySQL for efficient data storage. Engineered a RESTful API to organize and handle tasks in a ToDo list fashion.`,
+    achievements: [
+      "Developed high-performance Client-Server Application in Go",
+      "Implemented efficient client pooling for optimized resource management",
+      "Engineered RESTful API with MySQL integration",
+      "Delivered scalable task management system architecture"
+    ],
+    technologies: ["Go", "MySQL", "RESTful API", "Client Pooling"],
   },
   {
-    year: "June 2023 - June 2024",
-    role: "CAVS Team",
-    company: "Facebook",
-    description: `Enhanced the technologies used by the Connected and Autonomous Vehicle team to prepare an electric vehicle for competition. Improved the sensor fusion system by integrating various algorithms to achieve superior results in competitions.`,
-    technologies: ["Python", "C++", "MATLAB", "RTMaps"],
+    year: "Jun 2023 - Jun 2024",
+    role: "Developer - Connected and Autonomous Vehicles Team",
+    company: "UCD EcoCar",
+    logo: logoUCDEv, // Placeholder for company logo
+    description: `Enhanced EV's performance for competition by upgrading technologies used by the Connected and Autonomous Vehicle team. Conducted Vehicle benchmark tests to identify and mitigate inefficiencies in the sensor fusion algorithms. Developed an enhanced sensor fusion algorithm, increasing reliability by 20% to produce greater results in competition.`,
+    achievements: [
+      "Increased sensor fusion algorithm reliability by 20%",
+      "Enhanced EV performance for competitive advantage",
+      "Conducted comprehensive vehicle benchmark testing",
+      "Optimized Connected and Autonomous Vehicle technologies"
+    ],
+    technologies: ["Python", "C++", "MATLAB", "RTMaps", "Sensor Fusion", "Autonomous Systems"],
   },
 ];
 
 export const PROJECTS = [
   {
-    title: "Doc - Medical Chatbot)",
+    title: "Doc - Medical Chatbot",
     image: project5,
     description:
-      "Designed and developed a sophisticated medical chatbot using Large Language Models (LLM), LangChain, and Pinecone. Implemented a robust Retrieval-Augmented Generation (RAG) pipeline to ensure accurate healthcare information retrieval and enhance conversational AI. Built an intelligent virtual assistant with advanced vector search capabilities, leveraging OpenAI's language model to process complex medical queries and generate precise, contextually relevant responses.",
-    technologies: ["LLM Models(OpenAI)", "Langchain", "Pinecone", "Python", "NLP","Python" ],
+      "Architected a sophisticated medical chatbot using Large Language Models (LLM), LangChain, and Pinecone. Implemented a robust Retrieval-Augmented Generation (RAG) pipeline for accurate healthcare information retrieval.",
+    technologies: ["OpenAI", "LangChain", "Pinecone", "Python", "NLP", "RAG Pipeline"],
+    duration: "Jan 2025 - Feb 2025",
+    github: "https://github.com/Aadeshh/Doc",
   },
   {
-    title: "BeFake(BeReal Clone)",
+    title: "BeFake (BeReal Clone)",
     image: project1,
     description:
-      "Developed a fully functional clone of the popular app “BeReal” using React.js for the frontend and Firebase for the backend. Implemented key features such as secure user authentication, real-time commenting, and posting capabilities.",
+      "Developed a fully functional clone of the popular app 'BeReal' using React.js for the frontend and Firebase for the backend. Implemented key features such as secure user authentication, real-time commenting, and posting capabilities.",
     technologies: ["HTML", "Tailwind CSS", "React", "Firebase"],
+    github: "https://github.com/Aadeshh/BeFake",
   },
   {
     title: "3D T-Shirt Builder",
     image: project2,
     description:
-      "Created an innovative 3D T-Shirt Customization App using React.js, Three.js, and OpenAI. Enabled users to dynamically generate, personalize, and download unique 3D shirts. Integrated AI-generated logos and textures for intelligent design, ensuring responsive design and smooth animations with Framer Motion.",
-    technologies: ["HTML", "Tailwind CSS", "Three.js", "React.js","OpenAI","Framer Motion"],
+      "Created an innovative 3D T-Shirt Customization App using React.js, Three.js, and OpenAI. Enabled users to dynamically generate, personalize, and download unique 3D shirts with AI-generated logos and textures.",
+    technologies: ["HTML", "Tailwind CSS", "Three.js", "React.js", "OpenAI", "Framer Motion"],
+    github: "https://github.com/Aadeshh/TshirtCreator",
   },
   {
     title: "Portfolio Website",
     image: project3,
     description:
-      "A personal portfolio website showcasing projects, skills, and contact information.(what you're looking at right now :) )",
-    technologies: ["HTML", "Tailwind CSS", "React", "Bootstrap"],
+      "A personal portfolio website showcasing projects, skills, and contact information. Built with modern React components and responsive design principles.",
+    technologies: ["HTML", "Tailwind CSS", "React", "Vite"],
+    github: "https://github.com/Aadeshh/Portfolio",
   },
   {
     title: "Enigma Machine",
     image: project4,
     description:
-      "Implemented an Enigma machine in C, a historical cipher device used for securing communications. Developed key components including the plugboard, reflector, and rotors. Utilized predefined and custom rotors, and employed an online Enigma simulator for debugging and testing. This project demonstrates proficiency in replicating complex encryption mechanisms.",
-    technologies: ["C"],
+      "Implemented an Enigma machine in C, a historical cipher device used for securing communications. Developed key components including the plugboard, reflector, and rotors with advanced encryption mechanisms.",
+    technologies: ["C", "Cryptography", "Algorithm Implementation"],
+    github: "https://github.com/Aadeshh/Enigma",
   },
 ];
 
+// Education information
+export const EDUCATION = [
+  {
+    institution: "University of San Francisco",
+    degree: "Master's, Computer Science - AI Concentration",
+    duration: "Aug 2025 - Jun 2027",
+    status: "Current",
+  },
+  {
+    institution: "University of California - Davis",
+    degree: "Bachelor's, Computer Science",
+    duration: "Sep 2020 - Jun 2024",
+    coursework: "Data Structures/Algorithms, Artificial Intelligence, Machine Learning, Computer Architecture, Computer Networks, Operating Systems, Computer Security, Parallel Programming, Multithreaded/Concurrent programming",
+  },
+];
+
+// Certifications
+export const CERTIFICATIONS = [
+  {
+    name: "AWS Solutions Architect - Associate",
+    issuer: "Amazon Web Services (AWS)",
+    date: "Sept 2024",
+    featured: true,
+  },
+];
+
+// Skills organized by category with proficiency levels
+export const SKILLS = {
+  languages: {
+    category: "Programming Languages",
+    items: [
+      { name: "Python", proficiency: 90, icon: "python" },
+      { name: "JavaScript", proficiency: 85, icon: "javascript" },
+      { name: "Go", proficiency: 80, icon: "go" },
+      { name: "Java", proficiency: 75, icon: "java" },
+      { name: "C/C++", proficiency: 80, icon: "cpp" }
+    ]
+  },
+  frontend: {
+    category: "Frontend Technologies",
+    items: [
+      { name: "React.js", proficiency: 85, icon: "react" },
+      { name: "Next.js", proficiency: 80, icon: "nextjs" },
+      { name: "HTML/CSS", proficiency: 90, icon: "html" },
+      { name: "Tailwind CSS", proficiency: 90, icon: "tailwind" },
+      { name: "Three.js", proficiency: 70, icon: "threejs" }
+    ]
+  },
+  backend: {
+    category: "Backend & Infrastructure",
+    items: [
+      { name: "Node.js", proficiency: 80, icon: "nodejs" },
+      { name: "RESTful APIs", proficiency: 85, icon: "api" },
+      { name: "Docker", proficiency: 75, icon: "docker" },
+      { name: "Firebase", proficiency: 80, icon: "firebase" },
+      { name: "MySQL", proficiency: 75, icon: "mysql" }
+    ]
+  },
+  aiml: {
+    category: "AI/ML & Data Science",
+    items: [
+      { name: "Machine Learning", proficiency: 85, icon: "ml" },
+      { name: "LangChain", proficiency: 80, icon: "langchain" },
+      { name: "OpenAI", proficiency: 85, icon: "openai" },
+      { name: "Pinecone", proficiency: 75, icon: "pinecone" },
+      { name: "NLP", proficiency: 80, icon: "nlp" },
+      { name: "TensorFlow", proficiency: 70, icon: "tensorflow" }
+    ]
+  },
+  cloud: {
+    category: "Cloud & DevOps",
+    items: [
+      { name: "AWS", proficiency: 85, icon: "aws", certified: true },
+      { name: "Cloud Architecture", proficiency: 80, icon: "cloud" },
+      { name: "Git", proficiency: 90, icon: "git" },
+      { name: "JIRA", proficiency: 75, icon: "jira" }
+    ]
+  },
+  tools: {
+    category: "Tools & Specialties",
+    items: [
+      { name: "Web3", proficiency: 70, icon: "web3" },
+      { name: "Cybersecurity", proficiency: 80, icon: "security" },
+      { name: "MATLAB", proficiency: 70, icon: "matlab" },
+      { name: "RTMaps", proficiency: 65, icon: "rtmaps" }
+    ]
+  }
+};
+
 export const CONTACT = {
-  phoneNo: "+1(408)-355-8589",
+  phoneNo: "+1 (408) 355-8589",
   email: "athoppae@gmail.com",
+  linkedin: "https://linkedin.com/in/aadesh-thoppae-5b10311b4/",
+  github: "https://github.com/Aadeshh",
+  portfolio: "https://aadeshh.github.io/Portfolio/",
 };

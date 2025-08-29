@@ -1,0 +1,45 @@
+AADESH THOPPAE
++1 (408) 355-8589 | athoppae@gmail.com | linkedin.com/in/aadesh-thoppae-5b10311b4/ | aadeshh.github.io/Portfolio/
+SKILLS
+• Skills: Python, C/C++, Go, Java, AWS, JavaScript, React.js, Git, JIRA, Docker, SQL
+PROFESSIONAL EXPERIENCE
+Soundromeda
+Software Developer
+Remote
+Aug 2024 - Aug 2025
+•
+• •
+Spearheaded development of Odyssey, a gaming platform integrating Web3 payment systems and music streaming services, projecting 200% increase in user engagement
+Optimized cross-platform architecture ensuring 99.9% uptime and sub-second response times
+Orchestrated secure payment processing and authentication workflows through multiple third-party APIs, while maintaining robust data management protocols
+UC Davis Davis, CA, USA
+Cybersecurity Lab Assistant Aug 2023 - Jun 2024
+• Collaborated with professors on the GEMSOS security kernel, enhancing security features and gaining valuable insights into advanced security protocols
+• Established a multi-year project to implement a secure voting system, improving system reliability and security protocols
+UCD EcoCar Davis, CA, USA
+Developer - Connected and Autonomous Vehicles Team Jun 2023 - Jun 2024
+• Enhanced EV's performance for competition by upgrading technologies used by the Connected and Autonomous Vehicle team
+• Conducted Vehicle benchmark tests to identifying and mitigating inefficiencies in the sensor fusion algorithms
+• Developed an enhanced sensor fusion algorithm, increasing reliability by 20% to produce greater results in competition
+IOURING
+Software Engineering Intern Aug 2023 - Oct 2023
+• Designed and developed high-performance Client-Server Application in Go, leveraging client pooling and MySQL for efficient data storage.
+• Engineered a RESTful API to organize and handle tasks in a ToDo list fashion
+EDUCATION
+University of San Francisco
+Master's, Computer Science - AI Concentration
+University of California - Davis
+Bachelor's, Computer Science
+Aug 2025 - Jun 2027
+Sep 2020 - Jun 2024
+• RelevantCoursework:DataStructures/Algorithms,ArtificialIntelligence,MachineLearning,ComputerArchitecture,Computer Networks, Operating Systems, Computer Security, Parallel Programming, Multithreaded/Concurrent programming
+PROJECTS
+Doc - Medical ChatBot
+Creator
+Jan 2025 - Feb 2025
+• Architected a sophisticated medical chatbot using Large Language Models (LLM), LangChain, and Pinecone
+• Implementing a robust Retrieval-Augmented Generation (RAG) pipeline for accurate healthcare information retrieval
+• Developed an intelligent virtual assistant with advanced vector search capabilities, leveraging OpenAI's language model to
+process complex medical queries and generate precise, contextually relevant responses
+CERTIFICATIONS
+AWS Solutions Architect - Associate | Amazon Web Services (AWS) - Sept 2024

@@ -1,0 +1,40 @@
+{
+  "images": {
+    "Prof": {
+      "original": "src/assets/Prof.jpg",
+      "webp": null,
+      "alt": "Prof image"
+    },
+    "about": {
+      "original": "src/assets/about.jpg",
+      "webp": null,
+      "alt": "about image"
+    },
+    "python-logo-only": {
+      "original": "src/assets/python-logo-only.png",
+      "webp": null,
+      "alt": "python-logo-only image"
+    },
+    "3D": {
+      "original": "src/assets/projects/3D.png",
+      "webp": null,
+      "alt": "3D image"
+    },
+    "breal": {
+      "original": "src/assets/projects/breal.png",
+      "webp": null,
+      "alt": "breal image"
+    },
+    "enigma": {
+      "original": "src/assets/projects/enigma.jpeg",
+      "webp": null,
+      "alt": "enigma image"
+    },
+    "url": {
+      "original": "src/assets/projects/url.png",
+      "webp": null,
+      "alt": "url image"
+    }
+  },
+  "generated": "2025-08-27T00:58:26.068Z"
+}
