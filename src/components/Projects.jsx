@@ -150,6 +150,7 @@ const Projects = () => {
                   {project.title.includes('Medical') ? 'AI & Healthcare' :
                    project.title.includes('3D') ? 'AI & Design' :
                    project.title.includes('BeFake') ? 'Social Media' :
+                   project.title.includes('Learning') ? 'AI & Education' :
                    project.title.includes('Portfolio') ? 'Web Development' :
                    'Cybersecurity'}
                 </span>

@@ -3,6 +3,7 @@ import project2 from "../assets/projects/3D.png";
 import project3 from "../assets/projects/url.png";
 import project4 from "../assets/projects/enigma.jpeg";
 import project5 from "../assets/projects/DOC.png";
+import project6 from "../assets/projects/image6.jpg";
 
 import logoSoundromeda from "../assets/Soundromeda.webp";
 import logoUCD from "../assets/UCD.jpg";
@@ -80,6 +81,15 @@ export const EXPERIENCES = [
 ];
 
 export const PROJECTS = [
+  {
+    title: "AI Learning Companion",
+    image: project6,
+    description:
+      "Developed full-stack intelligent tutoring platform leveraging LLMs to auto-generate summaries, flashcards, quizzes, and interview questions from educational content, implementing RESTful APIs with Spring Boot and responsive UI.",
+    technologies: ["Java", "TypeScript", "Spring Boot", "Next.js", "React", "Tailwind CSS","LangChain4j", "Large Language Models (LLMs)", "Prompt Engineering", "Apache PDFBox", "Maven", "Git"],
+    duration: "Sep 2025 - Nov 2025",
+    github: "https://github.com/AadeshThoppae/AI-Learning-Companion",
+  },
   {
     title: "Doc - Medical Chatbot",
     image: project5,
