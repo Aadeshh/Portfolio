@@ -4,6 +4,7 @@ import project3 from "../assets/projects/url.png";
 import project4 from "../assets/projects/enigma.jpeg";
 import project5 from "../assets/projects/DOC.png";
 import project6 from "../assets/projects/image6.jpg";
+import project7 from "../assets/projects/project6.png";
 
 import logoSoundromeda from "../assets/Soundromeda.webp";
 import logoUCD from "../assets/UCD.jpg";
@@ -68,7 +69,7 @@ export const EXPERIENCES = [
     year: "Jun 2023 - Jun 2024",
     role: "Developer - Connected and Autonomous Vehicles Team",
     company: "UCD EcoCar",
-    logo: logoUCDEv, // Placeholder for company logo
+    logo: logoUCDEv, 
     description: `Enhanced EV's performance for competition by upgrading technologies used by the Connected and Autonomous Vehicle team. Conducted Vehicle benchmark tests to identify and mitigate inefficiencies in the sensor fusion algorithms. Developed an enhanced sensor fusion algorithm, increasing reliability by 20% to produce greater results in competition.`,
     achievements: [
       "Increased sensor fusion algorithm reliability by 20%",
@@ -81,6 +82,15 @@ export const EXPERIENCES = [
 ];
 
 export const PROJECTS = [
+  {
+    title: "Sentinels - Autonomous Financial Analyst",
+    image: project7,
+    duration: "Dec 2025",
+    description:
+      "Architected a proactive, multi-agent system that autonomously manages financial portfolio risk. Unlike passive chatbots, this 'push-based' agent wakes up daily via AWS EventBridge to research, analyze, and critique market data before the bell rings. Features a cyclic LangGraph architecture where 'Analyst' and 'Critic' agents engage in iterative debate to self-correct hallucinations, deployed as a containerized serverless function on AWS Lambda to ensure 99.9% reliability at near-zero cost.",
+    technologies: ["LangGraph (Multi-Agent)", "AWS Lambda (Docker)", "AWS EventBridge", "Python", "Slack API"],
+    github: "https://github.com/Aadeshh/FinancialAgent",
+  },
   {
     title: "AI Learning Companion",
     image: project6,
