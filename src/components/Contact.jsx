@@ -51,7 +51,7 @@ const Contact = () => {
   };
 
   return (
-    <section id= 'Contact' className="py-20 px-4">
+    <section id="contact" className="py-20 px-4">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-5xl font-bold text-center mb-8 bg-gradient-to-r from-cyan-500 to-purple-600 bg-clip-text text-transparent animate-gradient">
           Let's Connect

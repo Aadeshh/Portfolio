@@ -10,29 +10,49 @@ import logoSoundromeda from "../assets/Soundromeda.webp";
 import logoUCD from "../assets/UCD.jpg";
 import logoUCDEv from "../assets/UCDEV2.jpg";
 import logoIOURING from "../assets/IOURING.jpeg";
+import logoUSF from "../assets/usf.jpeg";
 
-export const MAIN_CONTENT = `Software Developer & AI Enthusiast currently pursuing Master's in Computer Science with AI Concentration at University of San Francisco. Experienced in developing scalable applications, cybersecurity solutions, and autonomous vehicle technologies. AWS Solutions Architect Associate certified with expertise in full-stack development, machine learning, and secure system design. Passionate about leveraging cutting-edge technologies to create innovative solutions that drive meaningful impact.`;
+export const MAIN_CONTENT = `AI Engineer & Full-Stack Developer pursuing a Master's in Computer Science (AI Concentration) at the University of San Francisco. I build production-grade AI systems — from multi-agent LLM pipelines to cloud-native applications — with a focus on making them fast, reliable, and cost-efficient. AWS Solutions Architect Associate certified.`;
 
-export const ABOUT_TEXT = `Hello! I'm Aadesh Thoppae, a Computer Science graduate from UC Davis currently pursuing my Master's in Computer Science with AI Concentration at University of San Francisco (2025-2027). My journey in tech spans cybersecurity research, autonomous vehicle development, and cutting-edge AI applications.
+export const ABOUT_TEXT = `Hey, I'm Aadesh — an AI Engineer and Full-Stack Developer pursuing my Master's in Computer Science (AI Concentration) at the University of San Francisco. I specialize in building production-grade AI systems: multi-agent LLM architectures, cloud-native deployments, and full-stack applications that are fast, reliable, and built to scale.
 
-As an AWS Solutions Architect Associate certified professional, I've spearheaded development of gaming platforms with Web3 integration, contributed to secure voting systems using advanced security kernels, and enhanced autonomous vehicle sensor fusion algorithms. My recent work includes developing sophisticated medical chatbots using Large Language Models and RAG pipelines.
+As an AWS Solutions Architect Associate certified professional, I've led development of gaming platforms with Web3 integration, contributed to secure voting systems using advanced security kernels, and optimized autonomous vehicle sensor fusion algorithms.
 
-I'm passionate about leveraging AI and machine learning to solve complex real-world problems. From achieving 200% user engagement increases to maintaining 99.9% system uptime, I focus on creating scalable, impactful solutions. Currently exploring the intersection of AI, healthcare, and autonomous systems while building my expertise in advanced machine learning techniques.
+My recent work focuses on multi-agent AI systems — from an autonomous financial analyst that runs a cyclic Analyst-Critic architecture on AWS Lambda to self-correct hallucinations, to a full-stack AI learning platform with a sandboxed code execution engine and a multi-model pipeline routing tasks between Gemini Pro and Gemini Flash for optimal cost and latency.
+
+I'm passionate about building AI systems that are not just functional but production-grade — scalable, reliable, and cost-efficient. Currently deepening my expertise in LLMs, agentic architectures, and applied machine learning at USF.
 
 Let's connect and create something innovative together!`;
 
 export const EXPERIENCES = [
   {
+  year: "Jan 2026 - Present",
+    role: "Student Research Assistant",
+    company: "Center for Law, Tech, and Social Good (USF)",
+    logo: logoUSF, // Placeholder for company logo
+    description: `Administer and maintain a blockchain validator node as part of a grant-funded initiative to explore socially beneficial decentralized infrastructure. Orchestrated a campus-wide hackathon focused on ”Blockchain for Social Good,” leading event promotion and technical programming to
+                  increase blockchain fluency among CS students.`,
+    achievements: [
+      "Deployed and actively maintain an XRPL validator node as part of a Ripple-funded grant initiative exploring decentralized infrastructure for social good",
+      "Organized a campus-wide 'Blockchain for Social Good' hackathon from scratch — drove technical programming, speaker outreach, and event promotion",
+      "Expanded XRP Ledger literacy among CS students through structured hackathon challenges and hands-on workshops with live blockchain infrastructure",
+      "Bridging decentralized technology with law and social policy as part of USF's interdisciplinary Center for Law, Tech, and Social Good",
+    ],
+    technologies: ["XRPL", "XRP", "Blockchain", "Node.js", "TypeScript"],
+    featured: false,
+  },
+  {
     year: "Aug 2024 - Aug 2025",
-    role: "Software Developer",
+    role: "Lead Software Developer",
     company: "Soundromeda",
     logo: logoSoundromeda, // Placeholder for company logo
     description: `Spearheaded development of Odyssey, a gaming platform integrating Web3 payment systems and music streaming services, projecting 200% increase in user engagement. Optimized cross-platform architecture ensuring 99.9% uptime and sub-second response times while handling concurrent media streaming. Orchestrated secure payment processing and authentication workflows through multiple third-party APIs, while maintaining robust data management protocols.`,
     achievements: [
       "Projected 200% increase in user engagement through innovative platform design",
-      "Achieved 99.9% system uptime with sub-second response times",
-      "Integrated multiple Web3 payment systems and third-party APIs",
-      "Optimized cross-platform architecture for concurrent media streaming"
+      "Achieved 99.9% system uptime with sub-second response times across concurrent media streaming",
+      "Defined product requirements and delivered scalable architecture balancing UX, compliance, and reliability",
+      "Integrated multiple Web3 payment systems and third-party APIs with secure, robust payment workflows",
+      "Partnered with leadership on product roadmaps, aligning technical execution with company growth goals",
     ],
     technologies: ["TypeScript", "Next.js", "Docker", "Firebase", "Web3"],
     featured: true,
@@ -95,7 +115,7 @@ export const PROJECTS = [
     title: "AI Learning Companion",
     image: project6,
     description:
-      "Developed full-stack intelligent tutoring platform leveraging LLMs to auto-generate summaries, flashcards, quizzes, and interview questions from educational content, implementing RESTful APIs with Spring Boot and responsive UI.",
+      "Built a secure In-Memory Code Execution Engine (JavaCompiler API) mirroring LeetCode's backend, with Regex-based sandboxing and custom ClassLoaders to prevent malicious I/O. Designed a Multi-Model AI Pipeline using LangChain4j that dynamically routes complex tasks to Gemini Pro and latency-sensitive tasks to Gemini Flash, reducing latency by ~60%. Implemented a RAG-based PDF processor (Apache PDFBox) that parses documents into structured study artifacts, cached via session repositories to eliminate redundant API calls.",
     technologies: ["Java", "TypeScript", "Spring Boot", "Next.js", "React", "Tailwind CSS","LangChain4j", "Large Language Models (LLMs)", "Prompt Engineering", "Apache PDFBox", "Maven", "Git"],
     duration: "Sep 2025 - Nov 2025",
     github: "https://github.com/AadeshThoppae/AI-Learning-Companion",
@@ -125,14 +145,14 @@ export const PROJECTS = [
     technologies: ["HTML", "Tailwind CSS", "Three.js", "React.js", "OpenAI", "Framer Motion"],
     github: "https://github.com/Aadeshh/TshirtCreator",
   },
-  {
-    title: "Portfolio Website",
-    image: project3,
-    description:
-      "A personal portfolio website showcasing projects, skills, and contact information. Built with modern React components and responsive design principles.",
-    technologies: ["HTML", "Tailwind CSS", "React", "Vite"],
-    github: "https://github.com/Aadeshh/Portfolio",
-  },
+  // {
+  //   title: "Portfolio Website",
+  //   image: project3,
+  //   description:
+  //     "A personal portfolio website showcasing projects, skills, and contact information. Built with modern React components and responsive design principles.",
+  //   technologies: ["HTML", "Tailwind CSS", "React", "Vite"],
+  //   github: "https://github.com/Aadeshh/Portfolio",
+  // },
   {
     title: "Enigma Machine",
     image: project4,
@@ -186,6 +206,7 @@ export const SKILLS = {
     items: [
       { name: "React.js", proficiency: 85, icon: "react" },
       { name: "Next.js", proficiency: 80, icon: "nextjs" },
+      { name: "TypeScript", proficiency: 80, icon: "typescript" },
       { name: "HTML/CSS", proficiency: 90, icon: "html" },
       { name: "Tailwind CSS", proficiency: 90, icon: "tailwind" },
       { name: "Three.js", proficiency: 70, icon: "threejs" }
@@ -195,6 +216,7 @@ export const SKILLS = {
     category: "Backend & Infrastructure",
     items: [
       { name: "Node.js", proficiency: 80, icon: "nodejs" },
+      { name: "Spring Boot", proficiency: 75, icon: "springboot" },
       { name: "RESTful APIs", proficiency: 85, icon: "api" },
       { name: "Docker", proficiency: 75, icon: "docker" },
       { name: "Firebase", proficiency: 80, icon: "firebase" },
@@ -205,7 +227,10 @@ export const SKILLS = {
     category: "AI/ML & Data Science",
     items: [
       { name: "Machine Learning", proficiency: 85, icon: "ml" },
+      { name: "PyTorch", proficiency: 80, icon: "pytorch" },
+      { name: "Scikit-learn", proficiency: 80, icon: "sklearn" },
       { name: "LangChain", proficiency: 80, icon: "langchain" },
+      { name: "LangGraph", proficiency: 80, icon: "langgraph" },
       { name: "OpenAI", proficiency: 85, icon: "openai" },
       { name: "Pinecone", proficiency: 75, icon: "pinecone" },
       { name: "NLP", proficiency: 80, icon: "nlp" },

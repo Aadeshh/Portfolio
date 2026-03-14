@@ -123,7 +123,7 @@ const handleResumeDownload = () => {
           
           {/* Right Content - Profile Image - ADJUSTED POSITIONING */}
           <div className='flex justify-center lg:justify-end animate-fade-in' style={{animationDelay: '0.6s'}}>
-            <div className='relative group -mt-20 lg:-mt-30'>
+            <div className='relative group lg:-mt-30'>
               {/* Subtle glow instead of animated ring */}
               <div className='absolute -inset-2 bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 rounded-full opacity-20 blur-xl group-hover:opacity-30 transition duration-500'></div>
               

@@ -9,10 +9,18 @@ const Experience = () => {
   }
 
   return (
-    <div className='border-b border-neutral-900 pb-4'>
-      <h2 className='my-20 text-center text-4xl'>
-        Experience
-      </h2>
+    <div id="experience" className='border-b border-neutral-900 pb-4'>
+      <div className="text-center pt-20 mb-16">
+        <h2 className='text-4xl lg:text-5xl font-bold mb-4'>
+          <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+            Work
+          </span>
+          <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+            {" "}Experience
+          </span>
+        </h2>
+        <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-purple-500 mx-auto rounded-full"></div>
+      </div>
       
       {/* Timeline Container */}
       <div className='relative max-w-6xl mx-auto px-4'>

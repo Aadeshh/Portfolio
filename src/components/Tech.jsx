@@ -9,37 +9,37 @@ const Tech = () => {
       title: "Core Technologies",
       icon: "⚡",
       color: "from-cyan-500 to-blue-600",
-      skills: ["Python", "JavaScript", "C/C++", "Go", "Java"]
+      skills: ["Python", "JavaScript", "TypeScript", "Go", "Java", "C/C++"]
     },
     frontend: {
       title: "Frontend",
       icon: "🎨",
       color: "from-purple-500 to-pink-600",
-      skills: ["React", "Next.js", "Tailwind CSS", "Pixi.js"]
+      skills: ["React", "Next.js", "Tailwind CSS", "Three.js"]
     },
     backend: {
       title: "Backend",
       icon: "⚙️",
       color: "from-green-500 to-teal-600",
-      skills: ["RESTful APIs", "SQL", "Authentication", "Firebase"]
+      skills: ["Spring Boot", "Node.js", "RESTful APIs", "MySQL", "SQL", "Firebase"]
     },
     cloud: {
       title: "Cloud & DevOps",
       icon: "☁️",
       color: "from-orange-500 to-red-600",
-      skills: ["AWS", "Docker", "Git", "CI/CD"],
+      skills: ["AWS", "AWS Lambda", "Docker", "Git", "CI/CD"],
       highlight: true
     },
     data: {
       title: "Data & AI",
       icon: "🤖",
       color: "from-yellow-500 to-orange-600",
-      skills: ["Machine Learning", "LLMs", "Pinecone", "Langchain","RAG"]
+      skills: ["Machine Learning", "PyTorch", "Scikit-learn", "TensorFlow", "LangChain", "LangGraph", "LLMs", "RAG", "NLP"]
     }
   };
 
   return (
-    <section className='py-20 relative'>
+    <section id="tech" className='py-20 relative'>
       <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
         {/* Compact Header */}
         <div className="text-center mb-10">

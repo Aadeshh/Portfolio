@@ -31,7 +31,7 @@ const About = () => {
   ];
 
   return (
-    <section className='py-20 relative'>
+    <section id="about" className='py-20 relative'>
       <div className='relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -83,14 +83,14 @@ const About = () => {
                 <button
                   key={tab}
                   onClick={() => setActiveTab(tab)}
-                  className={`flex-1 py-3 px-4 rounded-lg font-medium transition-all duration-300 ${
+                  className={`flex-1 py-3 px-2 sm:px-4 rounded-lg font-medium transition-all duration-300 text-sm ${
                     activeTab === tab
                       ? 'bg-gradient-to-r from-cyan-500 to-purple-600 text-white shadow-lg'
                       : 'text-gray-400 hover:text-white hover:bg-gray-800/50'
                   }`}
                 >
-                  <span className="mr-2">{aboutContent[tab].icon}</span>
-                  {aboutContent[tab].title}
+                  <span>{aboutContent[tab].icon}</span>
+                  <span className="hidden sm:inline ml-2">{aboutContent[tab].title}</span>
                 </button>
               ))}
             </div>

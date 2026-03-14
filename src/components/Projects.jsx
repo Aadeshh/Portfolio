@@ -87,7 +87,7 @@ const Projects = () => {
 
     const isVisible = visibleProjects.has(index)
     const isImageLoaded = loadedImages.has(index)
-    const isFeatured = project.title === "Doc - Medical Chatbot"
+    const isFeatured = project.title === "Sentinels - Autonomous Financial Analyst"
 
     return (
       <div
@@ -209,7 +209,7 @@ const Projects = () => {
   }
 
   return (
-    <div className='border-b border-neutral-900 pb-16'>
+    <div id="projects" className='border-b border-neutral-900 pb-16'>
       <div className="text-center mb-12">
         <h2 className='text-4xl lg:text-5xl font-bold bg-gradient-to-r from-white via-cyan-400 to-purple-500 bg-clip-text text-transparent mb-4'>
           Featured Projects
