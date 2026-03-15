@@ -83,7 +83,7 @@ const Navbar = () => {
             Aadesh
           </span>
           <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
-            {' '}Thoppae
+            {' '}T.
           </span>
         </a>
 
