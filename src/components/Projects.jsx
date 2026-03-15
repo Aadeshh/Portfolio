@@ -127,9 +127,10 @@ const ProjectCard = ({ project, index, observerRef, visibleProjects }) => {
 
 const Projects = () => {
   const [visibleProjects, setVisibleProjects] = useState(new Set())
-  const observerRef = useRef(null)
 
-  useEffect(() => {
+  // Create observer synchronously so it's ready before ProjectCard effects run
+  const observerRef = useRef(null)
+  if (!observerRef.current) {
     observerRef.current = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -141,12 +142,10 @@ const Projects = () => {
       },
       { threshold: 0.1 }
     )
+  }
 
-    return () => {
-      if (observerRef.current) {
-        observerRef.current.disconnect()
-      }
-    }
+  useEffect(() => {
+    return () => observerRef.current?.disconnect()
   }, [])
 
   return (
