@@ -16,11 +16,7 @@ const Main = () => {
   };
 
 
-// 1. Add your resume PDF to the public folder: /public/resume/Aadesh_Thoppae_Resume.pdf
-// 2. Update your handleResumeDownload function:
-
 const handleResumeDownload = () => {
-    // Method 1: Direct download
     const link = document.createElement('a');
     link.href = resume;
     link.download = 'Aadesh_Thoppae.pdf';
