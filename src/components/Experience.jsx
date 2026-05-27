@@ -1,5 +1,22 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
+import { motion, useInView } from 'framer-motion'
 import { EXPERIENCES } from '../constants'
+
+const FadeIn = ({ children, delay = 0, className = '' }) => {
+  const ref    = useRef(null)
+  const inView = useInView(ref, { once: true, amount: 0.08 })
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 18 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.4, delay, ease: 'easeOut' }}
+      className={className}
+    >
+      {children}
+    </motion.div>
+  )
+}
 
 const Experience = () => {
   const [expandedCard, setExpandedCard] = useState(null)
@@ -9,132 +26,164 @@ const Experience = () => {
   }
 
   return (
-    <div id="experience" className='border-b border-neutral-900 pb-4'>
-      <div className="text-center pt-20 mb-16">
-        <h2 className='text-4xl lg:text-5xl font-bold mb-4'>
-          <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
-            Work
-          </span>
-          <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
-            {" "}Experience
-          </span>
-        </h2>
-        <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-purple-500 mx-auto rounded-full"></div>
-      </div>
-      
-      {/* Timeline Container */}
-      <div className='relative max-w-6xl mx-auto px-4'>
-        {/* Timeline Line */}
-        <div className='absolute left-8 md:left-1/2 transform md:-translate-x-px top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-500 via-cyan-400 to-purple-500'></div>
-        
-        {EXPERIENCES.map((experience, index) => (
-          <div key={index} className={`relative mb-8 ${index % 2 === 0 ? 'md:ml-auto md:pl-8' : 'md:mr-auto md:pr-8'} md:w-1/2`}>
-            {/* Timeline Dot */}
-            <div className={`absolute w-3 h-3 bg-gradient-to-r from-purple-500 to-cyan-400 rounded-full border-2 border-neutral-900 ${index % 2 === 0 ? 'left-6 md:left-auto md:-right-1.5' : 'left-6 md:-left-1.5'} top-4 z-10 shadow-lg shadow-purple-500/50`}></div>
-            
-            {/* Experience Card */}
-            <div 
-              className={`ml-16 md:ml-0 bg-gradient-to-br from-neutral-900 to-neutral-800 rounded-lg p-4 shadow-xl border border-neutral-700 hover:border-purple-500/50 transition-all duration-300 cursor-pointer transform hover:scale-[1.01] hover:shadow-xl hover:shadow-purple-500/20 ${expandedCard === index ? 'ring-2 ring-purple-500/50' : ''} ${experience.featured ? 'ring-1 ring-gold-400/30' : ''}`}
-              onClick={() => toggleExpanded(index)}
-            >
-              {/* Featured Badge */}
-              {experience.featured && (
-                <div className='absolute -top-2 -right-2 bg-gradient-to-r from-yellow-400 to-orange-500 text-black text-xs font-bold px-2 py-1 rounded-full shadow-lg'>
-                  ⭐ Featured
-                </div>
-              )}
+    <div id="experience" className="py-10 pb-16 px-4 sm:px-6">
+      <div className="max-w-6xl mx-auto">
 
-              {/* Card Header */}
-              <div className='flex flex-col sm:flex-row sm:items-start sm:justify-between mb-3'>
-                <div className='flex items-start space-x-3 flex-1'>
-                  {/* Company Logo Placeholder */}
-                  <div className='w-10 h-10 bg-gradient-to-br from-purple-500/20 to-cyan-400/20 rounded-lg border border-purple-500/30 flex items-center justify-center flex-shrink-0'>
-                    <div className='w-6 h-6 bg-gradient-to-br from-purple-400 to-cyan-300 rounded opacity-60'>
-                      <img src={experience.logo} alt={experience.company} className="w-full h-full object-contain rounded-sm"/>
+        {/* Section header */}
+        <div className="section-header flex items-center justify-between">
+          <h2 className="text-xl font-semibold" style={{ color: 'var(--text-hi)' }}>
+            Experience
+          </h2>
+          <span className="text-xs font-mono" style={{ color: 'var(--text-lo)' }}>§ 03</span>
+        </div>
+
+        <div className="flex flex-col gap-3">
+          {EXPERIENCES.map((exp, index) => {
+            const isExpanded = expandedCard === index
+            return (
+              <FadeIn key={index} delay={index * 0.05}>
+                <div
+                  className="rounded-xl cursor-pointer overflow-hidden"
+                  style={{
+                    background:  'rgba(255, 255, 255, 0.025)',
+                    border:      exp.featured
+                      ? '1px solid rgba(192, 132, 252, 0.35)'
+                      : '1px solid var(--border)',
+                    backdropFilter: 'blur(8px)',
+                    transition:  'border-color 200ms ease',
+                  }}
+                  onClick={() => toggleExpanded(index)}
+                >
+                  {/* Card header */}
+                  <div className="p-4 sm:p-5 flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
+
+                    {/* Left: logo + role */}
+                    <div className="flex items-start gap-3 flex-1 min-w-0">
+                      <div
+                        className="w-9 h-9 rounded-lg overflow-hidden shrink-0 flex items-center justify-center"
+                        style={{ background: 'rgba(192, 132, 252, 0.08)', border: '1px solid var(--border)' }}
+                      >
+                        <img src={exp.logo} alt={exp.company} className="w-full h-full object-contain" />
+                      </div>
+
+                      <div className="min-w-0">
+                        <div className="flex items-center gap-2 flex-wrap">
+                          <span className="text-sm font-semibold" style={{ color: 'var(--text-hi)' }}>{exp.role}</span>
+                          {exp.featured && (
+                            <span
+                              className="text-[10px] px-2 py-0.5 rounded-full font-medium"
+                              style={{
+                                background: 'rgba(192, 132, 252, 0.1)',
+                                border:     '1px solid rgba(192, 132, 252, 0.3)',
+                                color:      'var(--purple)',
+                              }}
+                            >
+                              Featured
+                            </span>
+                          )}
+                        </div>
+                        <div className="text-xs mt-0.5" style={{ color: 'var(--purple)' }}>{exp.company}</div>
+                      </div>
+                    </div>
+
+                    {/* Right: date + toggle */}
+                    <div className="flex items-center gap-3 shrink-0">
+                      <span
+                        className="text-xs px-2.5 py-1 rounded-md font-mono"
+                        style={{
+                          background: 'rgba(255,255,255,0.04)',
+                          border:     '1px solid var(--border)',
+                          color:      'var(--text-mid)',
+                        }}
+                      >
+                        {exp.year}
+                      </span>
+                      <span className="text-xs" style={{ color: 'var(--text-lo)', transition: 'transform 200ms ease', transform: isExpanded ? 'rotate(90deg)' : 'none' }}>
+                        ›
+                      </span>
                     </div>
                   </div>
-                  
-                  <div className='flex-1'>
-                    <h3 className='text-lg font-bold text-white mb-1 group-hover:text-purple-300 transition-colors'>
-                      {experience.role}
-                    </h3>
-                    <p className='text-purple-300 font-semibold text-base mb-1'>
-                      {experience.company}
+
+                  {/* Metric highlights */}
+                  {(() => {
+                    const hits = (exp.achievements ?? [])
+                      .map((a) => {
+                        const m = a.match(/(\d+%|\d+\.\d+%|99\.9%|sub-second|200%|20%)/g)
+                        return m ? { metric: m[0], text: a.replace(m[0], '').trim() } : null
+                      })
+                      .filter(Boolean)
+                      .slice(0, 2)
+
+                    return hits.length > 0 ? (
+                      <div
+                        className="mx-4 sm:mx-5 mb-3 p-3 rounded-lg"
+                        style={{ background: 'rgba(251, 191, 36, 0.05)', border: '1px solid rgba(251, 191, 36, 0.15)' }}
+                      >
+                        <div className="flex flex-wrap gap-4 text-xs">
+                          {hits.map(({ metric, text }, i) => (
+                            <span key={i} className="flex items-baseline gap-1.5">
+                              <span className="font-bold" style={{ color: 'var(--gold)' }}>{metric}</span>
+                              <span style={{ color: 'var(--text-lo)' }}>{text}</span>
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    ) : null
+                  })()}
+
+                  {/* Description */}
+                  <div className="px-4 sm:px-5 pb-4 text-sm leading-relaxed" style={{ color: 'var(--text-mid)' }}>
+                    <p className={isExpanded ? '' : 'line-clamp-2'}>
+                      {exp.description}
                     </p>
                   </div>
-                </div>
-                
-                <div className='flex flex-col sm:items-end mt-2 sm:mt-0'>
-                  <span className='text-xs text-cyan-400 font-medium bg-cyan-400/10 px-2 py-1 rounded-full border border-cyan-400/20'>
-                    {experience.year}
-                  </span>
-                  <button className='mt-1 text-xs text-neutral-400 hover:text-purple-300 transition-colors flex items-center'>
-                    {expandedCard === index ? '▼ Less' : '▶ More'}
-                  </button>
-                </div>
-              </div>
 
-              {/* Key Metrics Highlight - Only show if there are quantifiable metrics */}
-              {(() => {
-                const metricsAchievements = experience.achievements?.slice(0, 2).map((achievement, idx) => {
-                  const metrics = achievement.match(/(\d+%|\d+\.\d+%|99\.9%|sub-second|200%|20%)/g);
-                  if (metrics) {
-                    return (
-                      <div key={idx} className='flex items-center space-x-2'>
-                        <span className='text-cyan-400 font-bold text-base'>{metrics[0]}</span>
-                        <span className='text-neutral-300 text-sm'>{achievement.replace(metrics[0], '').trim()}</span>
-                      </div>
-                    );
-                  }
-                  return null;
-                }).filter(Boolean);
-
-                return metricsAchievements && metricsAchievements.length > 0 ? (
-                  <div className='mb-3 p-2 bg-gradient-to-r from-purple-500/10 to-cyan-400/10 rounded-lg border border-purple-500/20'>
-                    <div className='flex flex-wrap gap-3 text-sm'>
-                      {metricsAchievements}
+                  {/* Expanded: achievements */}
+                  <div
+                    className="overflow-hidden"
+                    style={{
+                      maxHeight:  isExpanded ? '400px' : '0',
+                      transition: 'max-height 0.28s ease',
+                    }}
+                  >
+                    <div
+                      className="mx-4 sm:mx-5 mb-4 pt-3"
+                      style={{ borderTop: '1px solid var(--border)' }}
+                    >
+                      <div className="text-[10px] font-mono mb-2.5" style={{ color: 'var(--text-lo)' }}>// highlights</div>
+                      <ul className="space-y-2 text-sm" style={{ color: 'var(--text-mid)' }}>
+                        {(exp.achievements ?? []).map((a, i) => (
+                          <li key={i} className="flex items-start gap-2.5">
+                            <span className="shrink-0 mt-1" style={{ color: 'var(--purple)' }}>→</span>
+                            <span>{a}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   </div>
-                ) : null;
-              })()}
 
-              {/* Description */}
-              <p className={`text-neutral-300 leading-relaxed mb-3 text-sm transition-all duration-300 ${expandedCard === index ? '' : 'line-clamp-2'}`}>
-                {experience.description}
-              </p>
-
-              {/* Expandable Content */}
-              <div className={`transition-all duration-300 overflow-hidden ${expandedCard === index ? 'max-h-80 opacity-100' : 'max-h-0 opacity-0'}`}>
-                <div className='border-t border-neutral-700 pt-3 mb-3'>
-                  <h4 className='text-sm font-semibold text-purple-300 mb-2 flex items-center'>
-                    <span className='w-1.5 h-1.5 bg-cyan-400 rounded-full mr-2'></span>
-                    Key Achievements
-                  </h4>
-                  <ul className='text-sm text-neutral-300 space-y-1.5'>
-                    {experience.achievements?.map((achievement, idx) => (
-                      <li key={idx} className='flex items-start group'>
-                        <span className='text-cyan-400 mr-2 mt-0.5 group-hover:text-purple-400 transition-colors text-xs'>▶</span>
-                        <span className='group-hover:text-white transition-colors'>{achievement}</span>
-                      </li>
+                  {/* Tech tags */}
+                  <div className="px-4 sm:px-5 pb-4 flex flex-wrap gap-1.5">
+                    {exp.technologies.map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-2.5 py-1 text-xs rounded-md"
+                        style={{
+                          background: 'rgba(255,255,255,0.04)',
+                          border:     '1px solid rgba(192,132,252,0.1)',
+                          color:      'var(--text-lo)',
+                        }}
+                      >
+                        {tech}
+                      </span>
                     ))}
-                  </ul>
-                </div>
-              </div>
+                  </div>
 
-              {/* Enhanced Technology Tags */}
-              <div className='flex flex-wrap gap-1.5'>
-                {experience.technologies.map((tech, techIndex) => (
-                  <span 
-                    key={techIndex} 
-                    className='group px-2 py-1 text-xs font-medium bg-gradient-to-r from-purple-500/20 to-cyan-400/20 text-purple-300 rounded-full border border-purple-500/30 hover:border-purple-400 hover:shadow-md hover:shadow-purple-500/20 hover:scale-105 transition-all duration-200 cursor-default'
-                  >
-                    <span className='group-hover:text-cyan-300 transition-colors'>{tech}</span>
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-        ))}
+                </div>
+              </FadeIn>
+            )
+          })}
+        </div>
       </div>
     </div>
   )

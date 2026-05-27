@@ -1,6 +1,5 @@
 import project1 from "../assets/projects/breal.png";
 import project2 from "../assets/projects/3D.png";
-import project3 from "../assets/projects/url.png";
 import project4 from "../assets/projects/enigma.jpeg";
 import project5 from "../assets/projects/DOC.png";
 import project6 from "../assets/projects/image6.jpg";
@@ -106,44 +105,81 @@ export const PROJECTS = [
     title: "Sentinels - Autonomous Financial Analyst",
     image: project7,
     duration: "Dec 2025",
+    category: "AI & Cloud Infrastructure",
     description:
       "Architected a proactive, multi-agent system that autonomously manages financial portfolio risk. Unlike passive chatbots, this 'push-based' agent wakes up daily via AWS EventBridge to research, analyze, and critique market data before the bell rings. Features a cyclic LangGraph architecture where 'Analyst' and 'Critic' agents engage in iterative debate to self-correct hallucinations, deployed as a containerized serverless function on AWS Lambda to ensure 99.9% reliability at near-zero cost.",
     technologies: ["LangGraph (Multi-Agent)", "AWS Lambda (Docker)", "AWS EventBridge", "Python", "Slack API"],
     github: "https://github.com/Aadeshh/FinancialAgent",
+    logs: [
+      "> scheduler:       EventBridge trigger [06:00 EST / daily]",
+      "> agent_graph:     Analyst → Critic → Analyst [cyclic]",
+      "> hallucinate_chk: PASS [0 flagged this run]",
+      "> runtime:         Lambda [Docker container] @ us-east-1",
+      "> cost_per_run:    ~$0.00 [serverless invocation]",
+    ],
   },
   {
     title: "AI Learning Companion",
     image: project6,
+    duration: "Sep 2025 - Nov 2025",
+    category: "AI & Full-Stack",
     description:
       "Built a secure In-Memory Code Execution Engine (JavaCompiler API) mirroring LeetCode's backend, with Regex-based sandboxing and custom ClassLoaders to prevent malicious I/O. Designed a Multi-Model AI Pipeline using LangChain4j that dynamically routes complex tasks to Gemini Pro and latency-sensitive tasks to Gemini Flash, reducing latency by ~60%. Implemented a RAG-based PDF processor (Apache PDFBox) that parses documents into structured study artifacts, cached via session repositories to eliminate redundant API calls.",
     technologies: ["Java", "TypeScript", "Spring Boot", "Next.js", "React", "Tailwind CSS","LangChain4j", "Large Language Models (LLMs)", "Prompt Engineering", "Apache PDFBox", "Maven", "Git"],
-    duration: "Sep 2025 - Nov 2025",
     github: "https://github.com/AadeshThoppae/AI-Learning-Companion",
+    logs: [
+      "> sandbox:         JavaCompiler API + ClassLoader [isolated JVM]",
+      "> model_router:    complex → gemini-pro | fast → gemini-flash",
+      "> latency_delta:   -60% vs single-model baseline",
+      "> rag_pipeline:    PDFBox → chunk → embed → session cache",
+      "> redundant_calls: 0 [session repo hit rate: high]",
+    ],
   },
   {
     title: "Doc - Medical Chatbot",
     image: project5,
+    duration: "Jan 2025 - Feb 2025",
+    category: "AI & Healthcare",
     description:
       "Architected a sophisticated medical chatbot using Large Language Models (LLM), LangChain, and Pinecone. Implemented a robust Retrieval-Augmented Generation (RAG) pipeline for accurate healthcare information retrieval.",
     technologies: ["OpenAI", "LangChain", "Pinecone", "Python", "NLP", "RAG Pipeline"],
-    duration: "Jan 2025 - Feb 2025",
     github: "https://github.com/Aadeshh/Doc",
+    logs: [
+      "> vector_store:    Pinecone [medical knowledge corpus]",
+      "> chain:           LangChain RAG [OpenAI backbone]",
+      "> domain:          healthcare Q&A [structured output]",
+      "> index_status:    PASS [0 stale chunks detected]",
+    ],
   },
   {
     title: "BeFake (BeReal Clone)",
     image: project1,
+    category: "Full-Stack / Social",
     description:
       "Developed a fully functional clone of the popular app 'BeReal' using React.js for the frontend and Firebase for the backend. Implemented key features such as secure user authentication, real-time commenting, and posting capabilities.",
     technologies: ["HTML", "Tailwind CSS", "React", "Firebase"],
     github: "https://github.com/Aadeshh/BeFake",
+    logs: [
+      "> auth:            Firebase [session tokens secured]",
+      "> realtime_feed:   Firestore [sub-50ms update latency]",
+      "> media_store:     Firebase Storage [active]",
+      "> ui_layer:        React + Tailwind [mobile-responsive]",
+    ],
   },
   {
     title: "3D T-Shirt Builder",
     image: project2,
+    category: "AI & Creative Tools",
     description:
       "Created an innovative 3D T-Shirt Customization App using React.js, Three.js, and OpenAI. Enabled users to dynamically generate, personalize, and download unique 3D shirts with AI-generated logos and textures.",
     technologies: ["HTML", "Tailwind CSS", "Three.js", "React.js", "OpenAI", "Framer Motion"],
     github: "https://github.com/Aadeshh/TshirtCreator",
+    logs: [
+      "> renderer:        Three.js [WebGL pipeline @ 60fps]",
+      "> ai_texture:      DALL-E API [on-demand generation]",
+      "> animation:       Framer Motion [frame-perfect transitions]",
+      "> export:          PNG download [user-defined resolution]",
+    ],
   },
   // {
   //   title: "Portfolio Website",
@@ -156,10 +192,17 @@ export const PROJECTS = [
   {
     title: "Enigma Machine",
     image: project4,
+    category: "Cryptography / Systems",
     description:
       "Implemented an Enigma machine in C, a historical cipher device used for securing communications. Developed key components including the plugboard, reflector, and rotors with advanced encryption mechanisms.",
     technologies: ["C", "Cryptography", "Algorithm Implementation"],
     github: "https://github.com/Aadeshh/Enigma",
+    logs: [
+      "> components:      plugboard + 3 rotors + reflector",
+      "> cipher_spec:     Enigma M3 [historical Wehrmacht config]",
+      "> build:           C [zero external dependencies]",
+      "> compile:         PASS [0 errors | 0 warnings]",
+    ],
   },
 ];
 

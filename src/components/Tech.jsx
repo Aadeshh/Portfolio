@@ -1,139 +1,144 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react'
+import { motion, useInView } from 'framer-motion'
+
+const MODULES = [
+  {
+    key: 'core',
+    tag: 'Languages',
+    skills: ['Python', 'JavaScript', 'TypeScript', 'Go', 'Java', 'C/C++'],
+  },
+  {
+    key: 'frontend',
+    tag: 'Frontend',
+    skills: ['React', 'Next.js', 'Tailwind CSS', 'Three.js'],
+  },
+  {
+    key: 'backend',
+    tag: 'Backend',
+    skills: ['Spring Boot', 'Node.js', 'RESTful APIs', 'MySQL', 'SQL', 'Firebase'],
+  },
+  {
+    key: 'cloud',
+    tag: 'Cloud & DevOps',
+    skills: ['AWS', 'AWS Lambda', 'Docker', 'Git', 'CI/CD'],
+    certified: true,
+  },
+  {
+    key: 'data',
+    tag: 'AI / ML',
+    skills: ['Machine Learning', 'PyTorch', 'Scikit-learn', 'TensorFlow', 'LangChain', 'LangGraph', 'LLMs', 'RAG', 'NLP'],
+  },
+]
+
+const FadeIn = ({ children, delay = 0, className = '' }) => {
+  const ref    = useRef(null)
+  const inView = useInView(ref, { once: true, amount: 0.1 })
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 18 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.4, delay, ease: 'easeOut' }}
+      className={className}
+    >
+      {children}
+    </motion.div>
+  )
+}
 
 const Tech = () => {
-  const [hoveredCategory, setHoveredCategory] = useState(null);
-
-  // Streamlined to only the most important skills for recruiters
-  const techStack = {
-    core: {
-      title: "Core Technologies",
-      icon: "⚡",
-      color: "from-cyan-500 to-blue-600",
-      skills: ["Python", "JavaScript", "TypeScript", "Go", "Java", "C/C++"]
-    },
-    frontend: {
-      title: "Frontend",
-      icon: "🎨",
-      color: "from-purple-500 to-pink-600",
-      skills: ["React", "Next.js", "Tailwind CSS", "Three.js"]
-    },
-    backend: {
-      title: "Backend",
-      icon: "⚙️",
-      color: "from-green-500 to-teal-600",
-      skills: ["Spring Boot", "Node.js", "RESTful APIs", "MySQL", "SQL", "Firebase"]
-    },
-    cloud: {
-      title: "Cloud & DevOps",
-      icon: "☁️",
-      color: "from-orange-500 to-red-600",
-      skills: ["AWS", "AWS Lambda", "Docker", "Git", "CI/CD"],
-      highlight: true
-    },
-    data: {
-      title: "Data & AI",
-      icon: "🤖",
-      color: "from-yellow-500 to-orange-600",
-      skills: ["Machine Learning", "PyTorch", "Scikit-learn", "TensorFlow", "LangChain", "LangGraph", "LLMs", "RAG", "NLP"]
-    }
-  };
+  const [active, setActive] = useState(null)
 
   return (
-    <section id="tech" className='py-20 relative'>
-      <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-        {/* Compact Header */}
-        <div className="text-center mb-10">
-          <h2 className='text-4xl lg:text-5xl font-bold mb-3'>
-            <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
-              Technical
-            </span>
-            <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
-              {" "}Stack
-            </span>
+    <section id="tech" className="py-10 pb-16 relative px-4 sm:px-6">
+      <div className="max-w-6xl mx-auto">
+
+        {/* Section header */}
+        <div className="section-header flex items-center justify-between">
+          <h2 className="text-xl font-semibold" style={{ color: 'var(--text-hi)' }}>
+            Tech stack
           </h2>
-          <p className="text-gray-400 text-sm max-w-2xl mx-auto">
-            Proficient in modern technologies with a focus on scalable, cloud-native solutions
-          </p>
-        </div>
-
-        {/* AWS Certification Highlight - Smaller, integrated */}
-        <div className="flex justify-center mb-8">
-          <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-orange-500/20 to-yellow-500/20 backdrop-blur-sm border border-orange-400/30 rounded-full">
-            <span className="text-2xl mr-2">🏆</span>
-            <span className="text-white font-semibold">AWS Solutions Architect</span>
-            <span className="text-orange-300 ml-2">• Certified 2024</span>
+          <div
+            className="flex items-center gap-2 text-xs px-3 py-1 rounded-full"
+            style={{
+              border:     '1px solid rgba(251, 191, 36, 0.3)',
+              background: 'rgba(251, 191, 36, 0.06)',
+              color:      'var(--gold)',
+            }}
+          >
+            <span className="status-dot" style={{ backgroundColor: '#fbbf24' }} />
+            AWS SAA-C03
           </div>
         </div>
 
-        {/* Compact Skills Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          {Object.entries(techStack).map(([key, category]) => (
-            <div
-              key={key}
-              className={`group relative bg-gray-900/30 backdrop-blur-sm rounded-xl p-6 border transition-all duration-300 hover:scale-105 ${
-                category.highlight 
-                  ? 'border-orange-500/30 hover:border-orange-400/50' 
-                  : 'border-gray-800 hover:border-purple-500/30'
-              }`}
-              onMouseEnter={() => setHoveredCategory(key)}
-              onMouseLeave={() => setHoveredCategory(null)}
-            >
-              {/* Category Header */}
-              <div className="flex items-center mb-4">
-                <span className="text-2xl mr-3">{category.icon}</span>
-                <h3 className={`text-lg font-semibold bg-gradient-to-r ${category.color} bg-clip-text text-transparent`}>
-                  {category.title}
-                </h3>
-              </div>
+        {/* Module grid */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+          {MODULES.map((mod, i) => {
+            const isActive = active === mod.key
+            return (
+              <FadeIn key={mod.key} delay={i * 0.06}>
+                <div
+                  className="p-5 rounded-xl flex flex-col gap-4 cursor-default h-full"
+                  style={{
+                    background:  isActive
+                      ? 'rgba(192, 132, 252, 0.07)'
+                      : 'rgba(255, 255, 255, 0.02)',
+                    border:      isActive
+                      ? '1px solid rgba(192, 132, 252, 0.3)'
+                      : '1px solid var(--border)',
+                    transition:  'background 200ms ease, border-color 200ms ease',
+                  }}
+                  onMouseEnter={() => setActive(mod.key)}
+                  onMouseLeave={() => setActive(null)}
+                >
+                  {/* Header */}
+                  <div className="flex items-center justify-between">
+                    <span
+                      className="text-xs font-semibold"
+                      style={{ color: isActive ? 'var(--purple)' : 'var(--text-mid)' }}
+                    >
+                      {mod.tag}
+                    </span>
+                    {mod.certified && (
+                      <span
+                        className="text-[10px] px-2 py-0.5 rounded-full font-medium"
+                        style={{
+                          background: 'rgba(251, 191, 36, 0.1)',
+                          border:     '1px solid rgba(251, 191, 36, 0.3)',
+                          color:      'var(--gold)',
+                        }}
+                      >
+                        certified
+                      </span>
+                    )}
+                  </div>
 
-              {/* Skills List - Compact */}
-              <div className="flex flex-wrap gap-2">
-                {category.skills.map((skill) => (
-                  <span
-                    key={skill}
-                    className={`px-3 py-1 text-xs font-medium rounded-full transition-all duration-300 ${
-                      hoveredCategory === key
-                        ? 'bg-gradient-to-r ' + category.color + ' text-white'
-                        : 'bg-gray-800/50 text-gray-400'
-                    }`}
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-
-              {/* Highlight badge for AWS */}
-              {category.highlight && (
-                <div className="absolute -top-2 -right-2 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full px-2 py-1 shadow-lg">
-                  <span className="text-xs font-bold text-black">Certified</span>
+                  {/* Skills */}
+                  <div className="flex flex-wrap gap-1.5">
+                    {mod.skills.map((skill) => (
+                      <span
+                        key={skill}
+                        className="px-2.5 py-1 text-xs rounded-md"
+                        style={{
+                          background:  isActive ? 'rgba(192, 132, 252, 0.1)' : 'rgba(255,255,255,0.04)',
+                          border:      isActive ? '1px solid rgba(192,132,252,0.3)' : '1px solid rgba(192,132,252,0.1)',
+                          color:       isActive ? 'var(--text-hi)' : 'var(--text-lo)',
+                          transition:  'all 180ms ease',
+                        }}
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-              )}
-            </div>
-          ))}
+              </FadeIn>
+            )
+          })}
         </div>
 
-        {/* Minimal Stats Bar */}
-        {/* <div className="mt-12 flex justify-center">
-          <div className="inline-flex gap-8 px-8 py-4 bg-gray-900/30 backdrop-blur-sm rounded-full border border-gray-800">
-            <div className="text-center">
-              <div className="text-2xl font-bold text-cyan-400">25+</div>
-              <div className="text-xs text-gray-500">Technologies</div>
-            </div>
-            <div className="border-l border-gray-700"></div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-purple-400">5+</div>
-              <div className="text-xs text-gray-500">Years Exp</div>
-            </div>
-            <div className="border-l border-gray-700"></div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-orange-400">20+</div>
-              <div className="text-xs text-gray-500">Projects</div>
-            </div>
-          </div>
-        </div> */}
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Tech;
+export default Tech
