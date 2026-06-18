@@ -86,10 +86,9 @@ const WelcomeContent = () => (
       Hi! I'm Aadesh's portfolio assistant — here to help you explore his work and background.
     </p>
     <p>
-      Aadesh is an <span className="text-white font-semibold">AI Engineer and Full-Stack Developer</span>{' '}
+      Aadesh is an <span className="text-white font-semibold">AI Engineer</span>{' '}
+      building multimodal LLM pipelines, multi-agent architectures, and RAG systems — and
       pursuing his Master's in Computer Science (AI concentration) at the University of San Francisco.
-      He builds production-grade AI systems — multi-agent LLM pipelines, cloud-native applications,
-      and scalable full-stack products.
     </p>
     <p className="text-[#6b7280] text-[12.5px]">
       Choose a topic below to get started. ↓
@@ -275,7 +274,7 @@ const ContactContent = ({ contact }) => {
   const fields = [
     { label: 'Email',     value: contact.email,                       href: `mailto:${contact.email}` },
     { label: 'Phone',     value: contact.phoneNo                                                       },
-    { label: 'GitHub',    value: 'github.com/Aadeshh',                href: contact.github            },
+    { label: 'GitHub',    value: 'github.com/aadeshh',                href: contact.github            },
     { label: 'LinkedIn',  value: 'linkedin / aadesh-thoppae',         href: contact.linkedin          },
     { label: 'Portfolio', value: 'aadeshh.github.io/Portfolio',       href: contact.portfolio         },
   ]

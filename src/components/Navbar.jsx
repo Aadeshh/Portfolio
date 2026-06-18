@@ -79,9 +79,9 @@ const Navbar = () => {
             <span className="text-green-500">SYS_STATUS: OPERATIONAL</span>
           </span>
           <span className="text-slate-700">│</span>
-          <span>PROJECTS: <span className="text-sky-400">20+</span></span>
+          <span>ROLE: <span className="text-sky-400">AI ENGINEER</span></span>
           <span className="text-slate-700">│</span>
-          <span>UPTIME: <span className="text-sky-400">99.9%</span></span>
+          <span>CERT: <span className="text-sky-400">AWS SAA-C03</span></span>
         </div>
 
         {/* Desktop nav + social */}
@@ -114,7 +114,7 @@ const Navbar = () => {
               <FaLinkedin aria-hidden="true" />
             </a>
             <a
-              href="https://github.com/Aadeshh"
+              href="https://github.com/aadeshh"
               target="_blank" rel="noopener noreferrer"
               aria-label="GitHub profile"
               className="text-slate-500 hover:text-sky-400"
@@ -135,7 +135,7 @@ const Navbar = () => {
             <FaLinkedin aria-hidden="true" />
           </a>
           <a
-            href="https://github.com/Aadeshh"
+            href="https://github.com/aadeshh"
             target="_blank" rel="noopener noreferrer"
             aria-label="GitHub profile"
             className="text-slate-500 hover:text-sky-400 text-lg"

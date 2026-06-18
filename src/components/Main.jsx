@@ -3,10 +3,10 @@ import profImg from '../assets/Prof.jpg'
 import resume from '../../public/resume/Aadesh_Thoppae.pdf'
 
 const METRICS = [
-  { label: 'CODING_EXP',       value: '5+ YRS',  bar: 72,  pass: false },
-  { label: 'PROJECTS_SHIPPED', value: '20+',      bar: 100, pass: false },
-  { label: 'AWS_CERT',         value: 'SAA-C03',  bar: null, pass: true },
-  { label: 'LANGUAGES',        value: '6 ACTIVE', bar: 60,  pass: false },
+  { label: 'AWS_CERT',     value: 'SAA-C03',              bar: null, pass: true  },
+  { label: 'DEGREE',       value: 'MSC CS (AI) @ USF',    bar: null, pass: true  },
+  { label: 'CURRENT_ROLE', value: 'FOUNDING AI ENGINEER', bar: null, pass: true  },
+  { label: 'FOCUS',        value: 'AGENTS + RAG',          bar: 85,  pass: false },
 ]
 
 const SYS_INFO = [
@@ -61,7 +61,7 @@ const Main = () => {
                 AADESH<br />THOPPAE
               </h1>
               <div className="mt-3 text-sky-400 text-xs tracking-[0.2em]">
-                AI ENGINEER &amp; FULL-STACK DEVELOPER
+                AI ENGINEER — MULTIMODAL LLM &amp; AGENT SYSTEMS
               </div>
             </div>
 

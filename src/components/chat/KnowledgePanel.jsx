@@ -5,10 +5,10 @@ import { CONTACT } from '../../constants/index'
 const INTER = 'Inter, system-ui, -apple-system, sans-serif'
 
 const STATS = [
-  { label: 'Coding experience', value: '5+ yrs'    },
-  { label: 'Projects shipped',  value: '20+'        },
-  { label: 'Certification',     value: 'AWS SAA'   },
-  { label: 'Current degree',    value: 'MSc CS AI' },
+  { label: 'Certification', value: 'AWS SAA-C03'       },
+  { label: 'Degree',        value: 'MSc CS (AI)'       },
+  { label: 'Current role',  value: 'Founding AI Eng.'  },
+  { label: 'Focus',         value: 'Agents · RAG · LLMs' },
 ]
 
 const LINKS = [
@@ -49,7 +49,7 @@ const KnowledgePanel = () => (
 
       <p className="text-[#f4f4f5] font-semibold text-[15px] leading-none">Aadesh Thoppae</p>
       <p className="text-[#3b82f6] text-[12.5px] mt-1.5 text-center leading-tight">
-        AI Engineer · Full-Stack Dev
+        AI Engineer — multimodal LLM &amp; agent systems
       </p>
       <div className="flex items-center gap-1.5 mt-2.5">
         <span className="w-1.5 h-1.5 rounded-full bg-[#22c55e]" />

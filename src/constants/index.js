@@ -4,26 +4,38 @@ import project4 from "../assets/projects/enigma.jpeg";
 import project5 from "../assets/projects/DOC.png";
 import project6 from "../assets/projects/image6.jpg";
 import project7 from "../assets/projects/project6.png";
+import desiImage from "../assets/DESI.jpg";
 
+import logoGeoThread from "../assets/GeoThread.png";
 import logoSoundromeda from "../assets/Soundromeda.webp";
 import logoUCD from "../assets/UCD.jpg";
 import logoUCDEv from "../assets/UCDEV2.jpg";
 import logoIOURING from "../assets/IOURING.jpeg";
 import logoUSF from "../assets/usf.jpeg";
 
-export const MAIN_CONTENT = `AI Engineer & Full-Stack Developer pursuing a Master's in Computer Science (AI Concentration) at the University of San Francisco. I build production-grade AI systems — from multi-agent LLM pipelines to cloud-native applications — with a focus on making them fast, reliable, and cost-efficient. AWS Solutions Architect Associate certified.`;
+export const MAIN_CONTENT = `AI Engineer pursuing a Master's in Computer Science (AI Concentration) at the University of San Francisco. As Founding AI Engineer at GeoThread, I build multimodal LLM pipelines, multi-agent architectures, and RAG systems — with a focus on making them fast, reliable, and cost-efficient. AWS Solutions Architect Associate certified.`;
 
-export const ABOUT_TEXT = `Hey, I'm Aadesh — an AI Engineer and Full-Stack Developer pursuing my Master's in Computer Science (AI Concentration) at the University of San Francisco. I specialize in building production-grade AI systems: multi-agent LLM architectures, cloud-native deployments, and full-stack applications that are fast, reliable, and built to scale.
+export const ABOUT_TEXT = `Hey, I'm Aadesh — an AI Engineer pursuing my Master's in Computer Science (AI Concentration) at the University of San Francisco. I build production-grade AI systems: multimodal LLM pipelines, multi-agent architectures, RAG systems, and the serving and evaluation infrastructure that makes them reliable.
 
-As an AWS Solutions Architect Associate certified professional, I've led development of gaming platforms with Web3 integration, contributed to secure voting systems using advanced security kernels, and optimized autonomous vehicle sensor fusion algorithms.
+Right now I'm the founding AI Engineer at GeoThread, building the AI layer of a property-inspection platform — PDF parsing, multimodal issue flagging, and the data architecture beneath it. Before that I led development of a Web3-integrated gaming platform, built secure systems research on the GEMSOS kernel, and optimized autonomous-vehicle sensor fusion.
 
-My recent work focuses on multi-agent AI systems — from an autonomous financial analyst that runs a cyclic Analyst-Critic architecture on AWS Lambda to self-correct hallucinations, to a full-stack AI learning platform with a sandboxed code execution engine and a multi-model pipeline routing tasks between Gemini Pro and Gemini Flash for optimal cost and latency.
-
-I'm passionate about building AI systems that are not just functional but production-grade — scalable, reliable, and cost-efficient. Currently deepening my expertise in LLMs, agentic architectures, and applied machine learning at USF.
-
-Let's connect and create something innovative together!`;
+I'm most interested in the boundary between AI and production systems — retrieval, agents, evaluation, serving, and cost. Currently sharpening that edge through hands-on work in LLM serving, multimodal AI, and applied machine learning.`;
 
 export const EXPERIENCES = [
+  {
+    year: "May 2026 - Present",
+    role: "Founding AI Engineer",
+    company: "GeoThread",
+    logo: logoGeoThread,
+    description: `Building the AI layer of an AI-powered property inspection platform — PDF parsing, multimodal issue flagging, and the data architecture beneath it.`,
+    achievements: [
+      "Designed the PDF-parsing and pre-review issue-flagging pipeline; built a multi-tier cost model across AWS Textract, Google Document AI, and Claude Vision that surfaced a ~30x cost lever for MVP scoping",
+      "Prototyping multimodal consistency checks that cross-reference inspection photos, sensor readings, and text reports to flag discrepancies before human review",
+      "Own the AI direction for a sub-10-person startup, turning an ambiguous early-stage roadmap into scoped, shippable engineering work",
+    ],
+    technologies: ["Python", "Multimodal AI", "RAG", "Document AI", "GCP", "LLMs"],
+    featured: true,
+  },
   {
   year: "Jan 2026 - Present",
     role: "Student Research Assistant",
@@ -45,9 +57,9 @@ export const EXPERIENCES = [
     role: "Lead Software Developer",
     company: "Soundromeda",
     logo: logoSoundromeda, // Placeholder for company logo
-    description: `Spearheaded development of Odyssey, a gaming platform integrating Web3 payment systems and music streaming services, projecting 200% increase in user engagement. Optimized cross-platform architecture ensuring 99.9% uptime and sub-second response times while handling concurrent media streaming. Orchestrated secure payment processing and authentication workflows through multiple third-party APIs, while maintaining robust data management protocols.`,
+    description: `Spearheaded development of Odyssey, a gaming platform integrating Web3 payment systems and music streaming services, architected to support a projected 200% increase in user engagement. Optimized cross-platform architecture ensuring 99.9% uptime and sub-second response times while handling concurrent media streaming. Orchestrated secure payment processing and authentication workflows through multiple third-party APIs, while maintaining robust data management protocols.`,
     achievements: [
-      "Projected 200% increase in user engagement through innovative platform design",
+      "Architected to support a projected 200% increase in user engagement",
       "Achieved 99.9% system uptime with sub-second response times across concurrent media streaming",
       "Defined product requirements and delivered scalable architecture balancing UX, compliance, and reliability",
       "Integrated multiple Web3 payment systems and third-party APIs with secure, robust payment workflows",
@@ -104,8 +116,9 @@ export const PROJECTS = [
   {
     title: "Sentinels - Autonomous Financial Analyst",
     image: project7,
-    duration: "Dec 2025",
+    duration: "Sep 2025",
     category: "AI & Cloud Infrastructure",
+    featured: true,
     description:
       "Architected a proactive, multi-agent system that autonomously manages financial portfolio risk. Unlike passive chatbots, this 'push-based' agent wakes up daily via AWS EventBridge to research, analyze, and critique market data before the bell rings. Features a cyclic LangGraph architecture where 'Analyst' and 'Critic' agents engage in iterative debate to self-correct hallucinations, deployed as a containerized serverless function on AWS Lambda to ensure 99.9% reliability at near-zero cost.",
     technologies: ["LangGraph (Multi-Agent)", "AWS Lambda (Docker)", "AWS EventBridge", "Python", "Slack API"],
@@ -116,6 +129,21 @@ export const PROJECTS = [
       "> hallucinate_chk: PASS [0 flagged this run]",
       "> runtime:         Lambda [Docker container] @ us-east-1",
       "> cost_per_run:    ~$0.00 [serverless invocation]",
+    ],
+  },
+  {
+    title: "DESI Spectra Foundation Model",
+    image: desiImage,
+    duration: "Mar 2026 - May 2026",
+    category: "Deep Learning / Foundation Models",
+    description:
+      "Built a 21M-parameter decoder-only transformer foundation model from scratch in PyTorch, pretrained on DESI astronomical spectra with a two-phase masked-modeling curriculum. Achieved ~100x over a random baseline on masked-spectrum reconstruction, then adapted the learned representations for downstream redshift estimation.",
+    technologies: ["Python", "PyTorch", "Transformers", "Self-Supervised Learning", "Foundation Models"],
+    logs: [
+      "> architecture:    decoder-only transformer [21M params]",
+      "> pretraining:     two-phase masked-modeling curriculum",
+      "> reconstruction:  ~100x over random baseline",
+      "> downstream:      redshift estimation [adapted representations]",
     ],
   },
   {
@@ -235,75 +263,64 @@ export const CERTIFICATIONS = [
 // Skills organized by category with proficiency levels
 export const SKILLS = {
   languages: {
-    category: "Programming Languages",
+    category: "Languages",
     items: [
-      { name: "Python", proficiency: 90, icon: "python" },
-      { name: "JavaScript", proficiency: 85, icon: "javascript" },
-      { name: "Go", proficiency: 80, icon: "go" },
-      { name: "Java", proficiency: 75, icon: "java" },
-      { name: "C/C++", proficiency: 80, icon: "cpp" }
-    ]
-  },
-  frontend: {
-    category: "Frontend Technologies",
-    items: [
-      { name: "React.js", proficiency: 85, icon: "react" },
-      { name: "Next.js", proficiency: 80, icon: "nextjs" },
+      { name: "Python",     proficiency: 90, icon: "python"     },
+      { name: "Go",         proficiency: 80, icon: "go"         },
+      { name: "Java",       proficiency: 75, icon: "java"       },
       { name: "TypeScript", proficiency: 80, icon: "typescript" },
-      { name: "HTML/CSS", proficiency: 90, icon: "html" },
-      { name: "Tailwind CSS", proficiency: 90, icon: "tailwind" },
-      { name: "Three.js", proficiency: 70, icon: "threejs" }
-    ]
-  },
-  backend: {
-    category: "Backend & Infrastructure",
-    items: [
-      { name: "Node.js", proficiency: 80, icon: "nodejs" },
-      { name: "Spring Boot", proficiency: 75, icon: "springboot" },
-      { name: "RESTful APIs", proficiency: 85, icon: "api" },
-      { name: "Docker", proficiency: 75, icon: "docker" },
-      { name: "Firebase", proficiency: 80, icon: "firebase" },
-      { name: "MySQL", proficiency: 75, icon: "mysql" }
+      { name: "JavaScript", proficiency: 85, icon: "javascript" },
+      { name: "SQL",        proficiency: 80, icon: "sql"        },
+      { name: "C/C++",      proficiency: 80, icon: "cpp"        },
     ]
   },
   aiml: {
-    category: "AI/ML & Data Science",
+    category: "AI / ML",
     items: [
-      { name: "Machine Learning", proficiency: 85, icon: "ml" },
-      { name: "PyTorch", proficiency: 80, icon: "pytorch" },
-      { name: "Scikit-learn", proficiency: 80, icon: "sklearn" },
-      { name: "LangChain", proficiency: 80, icon: "langchain" },
-      { name: "LangGraph", proficiency: 80, icon: "langgraph" },
-      { name: "OpenAI", proficiency: 85, icon: "openai" },
-      { name: "Pinecone", proficiency: 75, icon: "pinecone" },
-      { name: "NLP", proficiency: 80, icon: "nlp" },
-      { name: "TensorFlow", proficiency: 70, icon: "tensorflow" }
+      { name: "LangGraph",              proficiency: 85, icon: "langgraph"   },
+      { name: "LangChain",              proficiency: 80, icon: "langchain"   },
+      { name: "PyTorch",                proficiency: 80, icon: "pytorch"     },
+      { name: "Transformers",           proficiency: 80, icon: "transformers"},
+      { name: "RAG",                    proficiency: 85, icon: "rag"         },
+      { name: "FAISS",                  proficiency: 75, icon: "faiss"       },
+      { name: "pgvector",               proficiency: 70, icon: "pgvector"    },
+      { name: "LLM Evaluation (Ragas)", proficiency: 75, icon: "ragas"       },
+      { name: "Multi-Agent Systems",    proficiency: 85, icon: "agents"      },
+      { name: "Multimodal AI",          proficiency: 80, icon: "multimodal"  },
+      { name: "Prompt Engineering",     proficiency: 85, icon: "prompt"      },
+      { name: "NLP",                    proficiency: 80, icon: "nlp"         },
+      { name: "Machine Learning",       proficiency: 85, icon: "ml"          },
     ]
   },
-  cloud: {
-    category: "Cloud & DevOps",
+  infra: {
+    category: "Infrastructure",
     items: [
-      { name: "AWS", proficiency: 85, icon: "aws", certified: true },
-      { name: "Cloud Architecture", proficiency: 80, icon: "cloud" },
-      { name: "Git", proficiency: 90, icon: "git" },
-      { name: "JIRA", proficiency: 75, icon: "jira" }
+      { name: "AWS",         proficiency: 85, icon: "aws",        certified: true },
+      { name: "GCP",         proficiency: 75, icon: "gcp"         },
+      { name: "Docker",      proficiency: 80, icon: "docker"      },
+      { name: "Kubernetes",  proficiency: 70, icon: "kubernetes"  },
+      { name: "FastAPI",     proficiency: 80, icon: "fastapi"     },
+      { name: "Spring Boot", proficiency: 75, icon: "springboot"  },
+      { name: "PostgreSQL",  proficiency: 80, icon: "postgresql"  },
+      { name: "Firestore",   proficiency: 75, icon: "firestore"   },
+      { name: "REST APIs",   proficiency: 85, icon: "api"         },
     ]
   },
-  tools: {
-    category: "Tools & Specialties",
+  frontend: {
+    category: "Frontend",
     items: [
-      { name: "Web3", proficiency: 70, icon: "web3" },
-      { name: "Cybersecurity", proficiency: 80, icon: "security" },
-      { name: "MATLAB", proficiency: 70, icon: "matlab" },
-      { name: "RTMaps", proficiency: 65, icon: "rtmaps" }
+      { name: "React",       proficiency: 85, icon: "react"   },
+      { name: "Next.js",     proficiency: 80, icon: "nextjs"  },
+      { name: "Tailwind CSS",proficiency: 85, icon: "tailwind"},
+      { name: "Three.js",    proficiency: 70, icon: "threejs" },
     ]
-  }
+  },
 };
 
 export const CONTACT = {
   phoneNo: "+1 (408) 355-8589",
   email: "athoppae@gmail.com",
   linkedin: "https://linkedin.com/in/aadesh-thoppae-5b10311b4/",
-  github: "https://github.com/Aadeshh",
+  github: "https://github.com/aadeshh",
   portfolio: "https://aadeshh.github.io/Portfolio/",
 };

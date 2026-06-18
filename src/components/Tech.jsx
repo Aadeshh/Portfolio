@@ -1,33 +1,12 @@
 import React, { useState, useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
+import { SKILLS } from '../constants'
 
 const MODULES = [
-  {
-    key: 'core',
-    tag: 'Languages',
-    skills: ['Python', 'JavaScript', 'TypeScript', 'Go', 'Java', 'C/C++'],
-  },
-  {
-    key: 'frontend',
-    tag: 'Frontend',
-    skills: ['React', 'Next.js', 'Tailwind CSS', 'Three.js'],
-  },
-  {
-    key: 'backend',
-    tag: 'Backend',
-    skills: ['Spring Boot', 'Node.js', 'RESTful APIs', 'MySQL', 'SQL', 'Firebase'],
-  },
-  {
-    key: 'cloud',
-    tag: 'Cloud & DevOps',
-    skills: ['AWS', 'AWS Lambda', 'Docker', 'Git', 'CI/CD'],
-    certified: true,
-  },
-  {
-    key: 'data',
-    tag: 'AI / ML',
-    skills: ['Machine Learning', 'PyTorch', 'Scikit-learn', 'TensorFlow', 'LangChain', 'LangGraph', 'LLMs', 'RAG', 'NLP'],
-  },
+  { key: 'languages', tag: 'Languages',      skills: SKILLS.languages.items.map(i => i.name) },
+  { key: 'aiml',      tag: 'AI / ML',        skills: SKILLS.aiml.items.map(i => i.name) },
+  { key: 'infra',     tag: 'Infrastructure', skills: SKILLS.infra.items.map(i => i.name), certified: true },
+  { key: 'frontend',  tag: 'Frontend',       skills: SKILLS.frontend.items.map(i => i.name) },
 ]
 
 const FadeIn = ({ children, delay = 0, className = '' }) => {

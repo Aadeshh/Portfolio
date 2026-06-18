@@ -8,7 +8,6 @@ const HeroSection = () => (
   <section
     id="hero"
     className="h-screen flex flex-col relative"
-    style={{ scrollSnapAlign: 'start', scrollSnapStop: 'always' }}
   >
     {/* Social links — top right, icon-only on mobile */}
     <motion.div
@@ -114,7 +113,7 @@ const HeroSection = () => (
             className="mt-4 sm:mt-5 text-sm font-medium"
             style={{ color: 'var(--text-mid)' }}
           >
-            AI Engineer &amp; Full-Stack Developer
+            AI Engineer — building multimodal LLM &amp; agent systems
           </motion.div>
 
           <motion.div

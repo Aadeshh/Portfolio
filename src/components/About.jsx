@@ -1,11 +1,6 @@
 import React, { useState, useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
-
-const ABOUT_TEXT = `Hey, I'm Aadesh — an AI Engineer and Full-Stack Developer pursuing my Master's in Computer Science (AI Concentration) at the University of San Francisco. I specialize in building production-grade AI systems: multi-agent LLM architectures, cloud-native deployments, and full-stack applications that are fast, reliable, and built to scale.
-
-As an AWS Solutions Architect Associate certified professional, I've led development of gaming platforms with Web3 integration, contributed to secure voting systems using advanced security kernels, and optimized autonomous vehicle sensor fusion algorithms.
-
-Currently deepening my expertise in LLMs, agentic architectures, and applied machine learning at USF.`
+import { ABOUT_TEXT } from '../constants'
 
 const aboutContent = {
   story: {
@@ -142,9 +137,9 @@ const About = () => {
             <FadeIn delay={0.16}>
               <div className="glass grid grid-cols-3 overflow-hidden">
                 {[
-                  { v: '5+',  label: 'Years coding' },
-                  { v: '20+', label: 'Projects'      },
-                  { v: '∞',   label: 'Still learning' },
+                  { v: 'SAA-C03', label: 'AWS certified'  },
+                  { v: 'MSc CS',  label: 'AI @ USF'       },
+                  { v: '∞',       label: 'Still learning' },
                 ].map(({ v, label }, i) => (
                   <div
                     key={label}
